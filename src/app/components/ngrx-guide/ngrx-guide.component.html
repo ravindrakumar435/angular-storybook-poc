@@ -1,0 +1,125 @@
+<div class="guide-container fade-in">
+  <div class="guide-header slide-in">
+    <h1>NgRx Implementation Guide</h1>
+    <p>Complete step-by-step guide to implement NgRx state management in Angular</p>
+  </div>
+
+  <!-- Installation Steps -->
+  <section class="steps-section slide-in">
+    <h2>📋 Implementation Steps</h2>
+    <div class="steps-grid">
+      <div class="step-card" *ngFor="let step of steps; trackBy: trackByIndex">
+        <div class="step-header">
+          <h3>{{ step.title }}</h3>
+          <p class="step-description">{{ step.description }}</p>
+        </div>
+        
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-label">Code</span>
+            <button class="copy-btn" (click)="copyToClipboard(step.code)" title="Copy code">
+              📋
+            </button>
+          </div>
+          <pre><code>{{ step.code }}</code></pre>
+        </div>
+        
+        <div class="explanation">
+          <h4>💡 Explanation</h4>
+          <p>{{ step.explanation }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section slide-in">
+    <h2>🚀 NgRx Benefits</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card" *ngFor="let benefit of benefits; trackBy: trackByIndex">
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Practices -->
+  <section class="practices-section slide-in">
+    <h2>✨ Best Practices</h2>
+    <div class="practices-list">
+      <div class="practice-item" *ngFor="let practice of bestPractices; trackBy: trackByIndex">
+        <span class="practice-icon">✅</span>
+        <span class="practice-text">{{ practice }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="quick-start-section slide-in">
+    <h2>⚡ Quick Start Commands</h2>
+    <div class="commands-grid">
+      <div class="command-card">
+        <h3>Install NgRx</h3>
+        <div class="code-block">
+          <pre><code>npm install &#64;ngrx/store&#64;17 &#64;ngrx/effects&#64;17 &#64;ngrx/entity&#64;17 &#64;ngrx/store-devtools&#64;17</code></pre>
+        </div>
+      </div>
+      
+      <div class="command-card">
+        <h3>Generate Store</h3>
+        <div class="code-block">
+          <pre><code>ng generate &#64;ngrx/schematics:store --root</code></pre>
+        </div>
+      </div>
+      
+      <div class="command-card">
+        <h3>Generate Feature</h3>
+        <div class="code-block">
+          <pre><code>ng generate &#64;ngrx/schematics:feature --name=todos --reducers=index.ts</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- File Structure -->
+  <section class="structure-section slide-in">
+    <h2>📁 Recommended File Structure</h2>
+    <div class="file-tree">
+      <div class="tree-item">
+        <span class="folder">📁 src/app/</span>
+        <div class="tree-children">
+          <div class="tree-item">
+            <span class="folder">📁 models/</span>
+            <div class="tree-children">
+              <div class="tree-item"><span class="file">📄 todo.model.ts</span></div>
+            </div>
+          </div>
+          <div class="tree-item">
+            <span class="folder">📁 store/</span>
+            <div class="tree-children">
+              <div class="tree-item"><span class="file">📄 todo.actions.ts</span></div>
+              <div class="tree-item"><span class="file">📄 todo.reducer.ts</span></div>
+              <div class="tree-item"><span class="file">📄 todo.effects.ts</span></div>
+              <div class="tree-item"><span class="file">📄 todo.selectors.ts</span></div>
+              <div class="tree-item"><span class="file">📄 index.ts</span></div>
+            </div>
+          </div>
+          <div class="tree-item">
+            <span class="folder">📁 components/</span>
+            <div class="tree-children">
+              <div class="tree-item"><span class="file">📄 todo-list.component.ts</span></div>
+              <div class="tree-item"><span class="file">📄 todo-form.component.ts</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <div class="navigation-buttons">
+    <button class="btn-primary" routerLink="/todos">
+      🏠 Back to Todo App
+    </button>
+  </div>
+</div> 

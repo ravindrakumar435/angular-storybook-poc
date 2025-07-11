@@ -1,0 +1,67 @@
+<div class="todo-item" [class.completed]="todo.completed">
+  <!-- View Mode -->
+  <div class="todo-content" *ngIf="!isEditing">
+    <div class="todo-header">
+      <div class="todo-checkbox">
+        <input
+          type="checkbox"
+          [checked]="todo.completed"
+          (change)="onToggle()"
+          class="checkbox"
+          [attr.aria-label]="'Mark ' + todo.title + ' as ' + (todo.completed ? 'incomplete' : 'complete')">
+        <span class="checkmark"></span>
+      </div>
+      
+      <div class="todo-info">
+        <h3 class="todo-title" [class.strikethrough]="todo.completed">
+          {{ todo.title }}
+        </h3>
+        <p class="todo-description" *ngIf="todo.description">
+          {{ todo.description }}
+        </p>
+        <span class="todo-date">
+          {{ formatDate(todo.createdAt) }}
+        </span>
+      </div>
+    </div>
+    
+    <div class="todo-actions">
+      <button class="btn-edit" (click)="onEdit()" title="Edit" type="button">
+        <span class="icon">✏️</span>
+      </button>
+      <button class="btn-delete" (click)="onDelete()" title="Delete" type="button">
+        <span class="icon">🗑️</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Edit Mode -->
+  <div class="todo-edit" *ngIf="isEditing">
+    <div class="edit-form">
+      <input
+        type="text"
+        [(ngModel)]="editedTodo.title"
+        class="edit-title"
+        placeholder="Task title"
+        required>
+      
+      <textarea
+        [(ngModel)]="editedTodo.description"
+        class="edit-description"
+        placeholder="Task description (optional)"
+        rows="2">
+      </textarea>
+      
+      <div class="edit-actions">
+        <button class="btn-save" (click)="onSave()" type="button">
+          <span class="icon">💾</span>
+          Save
+        </button>
+        <button class="btn-cancel" (click)="onCancel()" type="button">
+          <span class="icon">❌</span>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div> 

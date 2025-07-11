@@ -1,0 +1,417 @@
+.guide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.guide-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.025em;
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// Steps Section
+.steps-section {
+  h2 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+}
+
+.steps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .step-header {
+    margin-bottom: var(--space-6);
+    
+    h3 {
+      color: var(--gray-800);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+    
+    .step-description {
+      color: var(--gray-600);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+.code-block {
+  background: var(--gray-900);
+  border-radius: var(--radius-lg);
+  margin: var(--space-4) 0;
+  overflow: hidden;
+  
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background: var(--gray-800);
+    border-bottom: 1px solid var(--gray-700);
+    
+    .code-label {
+      color: var(--gray-300);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--gray-400);
+      cursor: pointer;
+      padding: var(--space-1);
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      
+      &:hover {
+        color: white;
+        background: var(--gray-700);
+      }
+    }
+  }
+  
+  pre {
+    margin: 0;
+    padding: var(--space-4);
+    overflow-x: auto;
+    
+    code {
+      color: #e4e4e7;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+}
+
+.explanation {
+  margin-top: var(--space-4);
+  
+  h4 {
+    color: var(--gray-800);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  
+  p {
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+}
+
+// Benefits Section
+.benefits-section {
+  h2 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  h3 {
+    color: var(--gray-800);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+  }
+  
+  p {
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+}
+
+// Best Practices Section
+.practices-section {
+  h2 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+}
+
+.practices-list {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.practice-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  .practice-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: var(--space-1);
+  }
+  
+  .practice-text {
+    color: var(--gray-700);
+    line-height: 1.6;
+    font-weight: 500;
+  }
+}
+
+// Quick Start Section
+.quick-start-section {
+  h2 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+}
+
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-6);
+}
+
+.command-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  h3 {
+    color: var(--gray-800);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+  }
+  
+  .code-block {
+    background: var(--gray-900);
+    border-radius: var(--radius);
+    padding: var(--space-4);
+    
+    pre {
+      margin: 0;
+      
+      code {
+        color: #e4e4e7;
+        font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+// File Structure Section
+.structure-section {
+  h2 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+}
+
+.file-tree {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  .tree-item {
+    margin-bottom: var(--space-2);
+    
+    .folder, .file {
+      color: var(--gray-700);
+      font-weight: 500;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.95rem;
+    }
+    
+    .folder {
+      color: var(--primary-600);
+    }
+    
+    .file {
+      color: var(--gray-600);
+    }
+  }
+  
+  .tree-children {
+    margin-left: var(--space-6);
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--gray-200);
+  }
+}
+
+// Navigation
+.navigation-buttons {
+  text-align: center;
+  margin-top: var(--space-8);
+  
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+    color: white;
+    border: none;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .guide-container {
+    padding: var(--space-4);
+    gap: var(--space-8);
+  }
+  
+  .guide-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .steps-grid {
+    gap: var(--space-6);
+  }
+  
+  .step-card {
+    padding: var(--space-6);
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .commands-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .file-tree {
+    padding: var(--space-6);
+    
+    .tree-children {
+      margin-left: var(--space-4);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-header h1 {
+    font-size: 2rem;
+  }
+  
+  .step-card {
+    padding: var(--space-4);
+  }
+  
+  .code-block pre code {
+    font-size: 0.8rem;
+  }
+} 

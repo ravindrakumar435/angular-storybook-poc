@@ -1,0 +1,75 @@
+<div class="todo-container fade-in">
+  <div class="todo-header slide-in">
+    <h1>Todo App with NgRx</h1>
+    <p>Manage your tasks efficiently with modern state management</p>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="loading$ | async" class="loading">
+    <div class="spinner"></div>
+    <p>Loading todos...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error$ | async as error" class="error">
+    <p>{{ error }}</p>
+  </div>
+
+  <!-- Todo Form -->
+  <app-todo-form class="slide-in"></app-todo-form>
+
+  <!-- Todo Lists -->
+  <div class="todo-lists" *ngIf="!(loading$ | async)">
+    <!-- Pending Todos -->
+    <div class="todo-section slide-in">
+      <h2>📋 Pending Tasks</h2>
+      <div class="todo-items" *ngIf="(pendingTodos$ | async)?.length; else noPendingTodos">
+        <app-todo-item
+          *ngFor="let todo of pendingTodos$ | async; trackBy: trackByTodoId"
+          [todo]="todo"
+          (toggle)="onToggleTodo($event)"
+          (delete)="onDeleteTodo($event)"
+          (update)="onUpdateTodo($event)"
+          class="fade-in">
+        </app-todo-item>
+      </div>
+      <ng-template #noPendingTodos>
+        <p class="no-todos">No pending tasks. Great job! 🎉</p>
+      </ng-template>
+    </div>
+
+    <!-- Completed Todos -->
+    <div class="todo-section slide-in">
+      <h2>✅ Completed Tasks</h2>
+      <div class="todo-items" *ngIf="(completedTodos$ | async)?.length; else noCompletedTodos">
+        <app-todo-item
+          *ngFor="let todo of completedTodos$ | async; trackBy: trackByTodoId"
+          [todo]="todo"
+          (toggle)="onToggleTodo($event)"
+          (delete)="onDeleteTodo($event)"
+          (update)="onUpdateTodo($event)"
+          class="fade-in">
+        </app-todo-item>
+      </div>
+      <ng-template #noCompletedTodos>
+        <p class="no-todos">No completed tasks yet. Keep going! 💪</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Statistics -->
+  <div class="stats slide-in" *ngIf="!(loading$ | async)">
+    <div class="stat-item">
+      <span class="stat-number">{{ (todos$ | async)?.length || 0 }}</span>
+      <span class="stat-label">Total Tasks</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ (pendingTodos$ | async)?.length || 0 }}</span>
+      <span class="stat-label">Pending</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ (completedTodos$ | async)?.length || 0 }}</span>
+      <span class="stat-label">Completed</span>
+    </div>
+  </div>
+</div> 
